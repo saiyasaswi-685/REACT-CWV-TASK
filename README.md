@@ -1,32 +1,38 @@
-# 🚀 Frontend Performance Optimization (Core Web Vitals)
+# 🚀 Frontend Performance Optimization using React + Core Web Vitals
 
 ## 📌 Project Overview
 
 This project demonstrates how to identify, analyze, and optimize **Core Web Vitals (CWV)** in a React + TypeScript + Vite application.
 
-The application was intentionally built with several performance issues such as:
-
-* Large unoptimized images
-* Layout shifts (CLS)
-* Blocking JavaScript execution
-* Poor loading strategy
-* Heavy bundle size
-
-These issues were identified using **Google Lighthouse** and then fixed using modern frontend optimization techniques.
+The application was intentionally developed with several frontend performance issues to simulate a real-world scenario. These issues were analyzed using **Google Lighthouse** and then optimized using modern web performance best practices.
 
 ---
 
 # 🎯 Main Objective
 
-The primary goal of this project is to improve the Lighthouse Performance score by optimizing the application's loading performance and user experience.
+The main objective of this project is to improve the application's loading performance, responsiveness, and visual stability by optimizing Core Web Vitals.
 
-### Before Optimization
+### Performance Improvement
 
-* Performance Score: **8**
+| Version             | Lighthouse Score |
+| ------------------- | ---------------: |
+| Before Optimization |            **8** |
+| After Optimization  |          **100** |
 
-### After Optimization
+---
 
-* Performance Score: **100**
+# 🌟 Features
+
+* Responsive React Application
+* Hero Banner
+* Article Cards
+* Trending Sidebar
+* Skeleton Loading
+* Infinite Scroll
+* Advertisement Banner
+* Core Web Vitals Optimization
+* Lighthouse Performance Testing
+* Bundle Analysis
 
 ---
 
@@ -36,68 +42,70 @@ The primary goal of this project is to improve the Lighthouse Performance score 
 * TypeScript
 * Vite
 * Web Vitals
-* Lighthouse
+* Google Lighthouse
 * Rollup Plugin Visualizer
 * Sharp CLI
 * Lodash
 
 ---
 
-# ✨ Optimizations Implemented
+# ⚡ Performance Optimizations
 
-## ✅ Hero Image Optimization
+## 🖼️ Hero Image Optimization
 
-* Converted PNG → WebP
-* Added preload
-* Added width & height
+* Converted PNG image to WebP
+* Added image preload
+* Added width and height attributes
 * Used `fetchPriority="high"`
 * Enabled async image decoding
 
 ---
 
-## ✅ Image Optimization
+## 🖼️ Image Optimization
 
-* Added width and height attributes
-* Lazy loading for article thumbnails
+* Added width & height attributes
+* Lazy loaded article images
+* Reduced layout shifts
 
 ---
 
-## ✅ Layout Shift (CLS) Fix
+## 📐 Layout Shift (CLS) Optimization
 
 * Reserved advertisement banner space
-* Prevented layout movement during page load
+* Eliminated unexpected page movement
+* Improved visual stability
 
 ---
 
-## ✅ JavaScript Optimization
+## ⚙️ JavaScript Optimization
 
-* Removed heavy blocking task
+* Removed heavy blocking tasks
 * Deferred analytics initialization
-* Reduced loading delay
+* Reduced initial rendering delay
 
 ---
 
-## ✅ Font Optimization
+## 🔤 Font Optimization
 
 * Added Google Fonts preconnect
-* Used asynchronous font loading
+* Implemented asynchronous font loading
 * Enabled `display=swap`
 
 ---
 
-## ✅ Bundle Optimization
+## 📦 Bundle Optimization
 
 * Installed Rollup Plugin Visualizer
 * Generated bundle analysis report
+* Optimized production bundle
 
 ---
 
-## 📊 Lighthouse Performance
+# 📊 Lighthouse Results
 
-| Version             | Performance Score |
-| ------------------- | ----------------: |
-| Before Optimization |                 8 |
-| After Optimization  |               100 |
+| Metric      | Before |   After |
+| ----------- | -----: | ------: |
+| Performance |  **8** | **100** |
 
 ---
 
@@ -117,37 +125,37 @@ The primary goal of this project is to improve the Lighthouse Performance score 
 
 ## 📈 Bundle Analysis Report
 
-![Bundle Visualizer](./screenshots/bundle-analysis.png)
+![Bundle Analysis](./screenshots/bundle-analysis.png)
 
 ---
 
 # 📦 Installation
 
-Clone the repository
+## Clone Repository
 
 ```bash
 git clone https://github.com/saiyasaswi-685/REACT-CWV-TASK.git
 ```
 
-Go to the project directory
+## Navigate to Project
 
 ```bash
 cd REACT-CWV-TASK
 ```
 
-Install dependencies
+## Install Dependencies
 
 ```bash
 npm install
 ```
 
-Run development server
+## Start Development Server
 
 ```bash
 npm run dev
 ```
 
-Open your browser
+Open:
 
 ```
 http://localhost:5173
@@ -169,7 +177,7 @@ Preview production build
 npm run preview
 ```
 
-Open
+Open:
 
 ```
 http://localhost:4173
@@ -179,21 +187,17 @@ http://localhost:4173
 
 # 📥 NPM Packages Used
 
-## Create Project
+## Create React + Vite Project
 
 ```bash
 npm create vite@latest
 ```
 
----
-
-## Install Dependencies
+## Install Project Dependencies
 
 ```bash
 npm install
 ```
-
----
 
 ## Install Web Vitals
 
@@ -201,9 +205,7 @@ npm install
 npm install web-vitals
 ```
 
----
-
-## Install Performance Tools
+## Install Performance Optimization Tools
 
 ```bash
 npm install sharp-cli rollup-plugin-visualizer --save-dev
@@ -211,9 +213,9 @@ npm install sharp-cli rollup-plugin-visualizer --save-dev
 
 ---
 
-# 🧪 Testing
+# 🧪 Testing Guide
 
-## Development Server
+## Development Testing
 
 ```bash
 npm run dev
@@ -222,15 +224,15 @@ npm run dev
 Verify:
 
 * Hero image loads correctly
-* 12 article cards are visible
-* Sidebar appears
+* 12 article cards are displayed
+* Sidebar is visible
 * Skeleton loader appears
-* Infinite scroll section appears
-* Advertisement banner appears
+* Infinite scroll section loads
+* Advertisement banner is displayed
 
 ---
 
-## Production Build
+## Production Build Testing
 
 ```bash
 npm run build
@@ -240,6 +242,7 @@ Verify:
 
 * Build completes successfully
 * No build errors
+* `bundle-stats.html` is generated
 
 ---
 
@@ -249,7 +252,7 @@ Verify:
 npm run preview
 ```
 
-Open
+Open:
 
 ```
 http://localhost:4173
@@ -261,19 +264,15 @@ http://localhost:4173
 
 1. Open Chrome
 2. Press **F12**
-3. Open **Lighthouse**
-4. Select
+3. Navigate to **Lighthouse**
+4. Select:
 
 * Desktop
 * Performance
 
-5. Click
+5. Click **Analyze page load**
 
-```
-Analyze page load
-```
-
-Expected Result
+### Expected Result
 
 ```
 Performance Score = 100
@@ -283,13 +282,13 @@ Performance Score = 100
 
 ## Bundle Analysis
 
-After running
+After executing:
 
 ```bash
 npm run build
 ```
 
-A file named
+A file named:
 
 ```
 bundle-stats.html
@@ -297,7 +296,7 @@ bundle-stats.html
 
 is generated.
 
-Open it in your browser to analyze the JavaScript bundle.
+Open it in your browser to visualize the JavaScript bundle size and module distribution.
 
 ---
 
@@ -307,7 +306,16 @@ Open it in your browser to analyze the JavaScript bundle.
 REACT-CWV-TASK
 │
 ├── public
+│   ├── hero.png
+│   ├── hero.webp
+│   ├── favicon.svg
+│   └── icons.svg
+│
 ├── screenshots
+│   ├── lighthouse-before.png
+│   ├── lighthouse-after.png
+│   └── bundle-analysis.png
+│
 ├── src
 │   ├── components
 │   ├── data
@@ -328,19 +336,20 @@ REACT-CWV-TASK
 
 **Saiyasaswi**
 
-GitHub:
+GitHub Profile:
 https://github.com/saiyasaswi-685
+
+Repository:
+https://github.com/saiyasaswi-685/REACT-CWV-TASK
 
 ---
 
-# ⭐ Result
+# 🏆 Final Result
 
-✅ Lighthouse Performance Improved
+✅ Successfully improved **Google Lighthouse Performance Score** from:
 
 ```
 8  →  100
 ```
 
-Successfully optimized Core Web Vitals using modern frontend performance best practices.
-
-
+This project demonstrates practical implementation of modern frontend performance optimization techniques, including Core Web Vitals improvements, image optimization, bundle optimization, lazy loading, layout stability enhancements, and production performance analysis.
