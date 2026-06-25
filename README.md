@@ -105,19 +105,19 @@ The primary goal of this project is to improve the Lighthouse Performance score 
 
 ## 🔴 Before Optimization
 
-![Before Lighthouse](./screenshots/Screenshot%202026-06-24%20225728.png)
+![Before Lighthouse](./screenshots/lighthouse-before.png)
 
 ---
 
 ## 🟢 After Optimization
 
-![After Lighthouse](./screenshots/Screenshot%202026-06-25%20161857.png)
+![After Lighthouse](./screenshots/lighthouse-after.png)
 
 ---
 
 ## 📈 Bundle Analysis Report
 
-![Bundle Visualizer](./screenshots/Screenshot%202026-06-24%20230111.png)
+![Bundle Visualizer](./screenshots/bundle-analysis.png)
 
 ---
 
