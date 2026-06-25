@@ -2,11 +2,16 @@ function Hero() {
   return (
     <div>
       <img
-        src="https://picsum.photos/1200/500"
+        src="/hero.webp"
         alt="Hero Image"
-        width="1200"
-        height="500"
+        width={1200}
+        height={500}
         fetchPriority="high"
+        decoding="async"
+        style={{
+          width: "100%",
+          height: "auto",
+        }}
       />
     </div>
   );

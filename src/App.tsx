@@ -9,14 +9,16 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [showBanner, setShowBanner] = useState(false);
 
-  // Fake API loading
+  // Simulated API loading
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 500);
+
+    return () => clearTimeout(timer);
   }, []);
 
-  // Late loading ad banner (CLS issue)
+  // Show banner after delay
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowBanner(true);
@@ -25,34 +27,33 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  // Heavy blocking task (TBT issue)
+  // Deferred analytics (doesn't block initial render)
   useEffect(() => {
-    console.log("Simulating heavy analytics initialization...");
+    const initAnalytics = () => {
+      console.log("Analytics initialized");
+    };
 
-    const start = performance.now();
-
-    while (performance.now() - start < 600) {
-      // Block main thread
-    }
-
-    console.log("Analytics initialized.");
+    setTimeout(initAnalytics, 0);
   }, []);
 
   return (
     <div>
-      {showBanner && (
-        <div
-          style={{
-            height: "90px",
-            background: "orange",
-            textAlign: "center",
-            padding: "20px",
-            fontWeight: "bold",
-          }}
-        >
-          🚀 Special Advertisement Banner
-        </div>
-      )}
+      {/* Reserve banner space to prevent CLS */}
+      <div style={{ minHeight: "90px" }}>
+        {showBanner && (
+          <div
+            style={{
+              height: "90px",
+              background: "orange",
+              textAlign: "center",
+              padding: "20px",
+              fontWeight: "bold",
+            }}
+          >
+            🚀 Special Advertisement Banner
+          </div>
+        )}
+      </div>
 
       <Hero />
 

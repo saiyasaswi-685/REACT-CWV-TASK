@@ -20,6 +20,14 @@ function ArticleCard({ article }: ArticleProps) {
       <img
         src={article.thumbnail}
         alt={article.title}
+        width={300}
+        height={200}
+        loading="lazy"
+        style={{
+          width: "100%",
+          height: "auto",
+          objectFit: "cover",
+        }}
       />
 
       <h3>{article.title}</h3>

@@ -1,75 +1,688 @@
-# React + TypeScript + Vite
+# 🚀 Frontend Performance Optimization (Core Web Vitals)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Project Overview
 
-Currently, two official plugins are available:
+This project demonstrates how to identify, analyze, and optimize **Core Web Vitals (CWV)** in a React + TypeScript + Vite application.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The application was intentionally built with several performance issues such as:
 
-## React Compiler
+* Large unoptimized images
+* Layout shifts (CLS)
+* Blocking JavaScript execution
+* Poor loading strategy
+* Heavy bundle size
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+These issues were identified using **Google Lighthouse** and then fixed using modern frontend optimization techniques.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# 🎯 Main Objective
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The primary goal of this project is to improve the Lighthouse Performance score by optimizing the application's loading performance and user experience.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Before Optimization
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+* Performance Score: **8**
 
+### After Optimization
+
+* Performance Score: **100**
+
+---
+
+# 🛠️ Tech Stack
+
+* React
+* TypeScript
+* Vite
+* Web Vitals
+* Lighthouse
+* Rollup Plugin Visualizer
+* Sharp CLI
+* Lodash
+
+---
+
+# ✨ Optimizations Implemented
+
+## ✅ Hero Image Optimization
+
+* Converted PNG → WebP
+* Added preload
+* Added width & height
+* Used `fetchPriority="high"`
+* Enabled async image decoding
+
+---
+
+## ✅ Image Optimization
+
+* Added width and height attributes
+* Lazy loading for article thumbnails
+
+---
+
+## ✅ Layout Shift (CLS) Fix
+
+* Reserved advertisement banner space
+* Prevented layout movement during page load
+
+---
+
+## ✅ JavaScript Optimization
+
+* Removed heavy blocking task
+* Deferred analytics initialization
+* Reduced loading delay
+
+---
+
+## ✅ Font Optimization
+
+* Added Google Fonts preconnect
+* Used asynchronous font loading
+* Enabled `display=swap`
+
+---
+
+## ✅ Bundle Optimization
+
+* Installed Rollup Plugin Visualizer
+* Generated bundle analysis report
+
+---
+
+## 📊 Lighthouse Performance
+
+| Version             | Performance Score |
+| ------------------- | ----------------: |
+| Before Optimization |                 8 |
+| After Optimization  |               100 |
+
+---
+
+# 📷 Screenshots
+
+## 🔴 Before Optimization
+
+![Before Lighthouse](./screenshots/Screenshot%202026-06-24%20225728.png)
+
+---
+
+## 🟢 After Optimization
+
+![After Lighthouse](./screenshots/Screenshot%202026-06-25%20161857.png)
+
+---
+
+## 📈 Bundle Analysis Report
+
+![Bundle Visualizer](./screenshots/Screenshot%202026-06-24%20230111.png)
+
+---
+
+# 📦 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/saiyasaswi-685/REACT-CWV-TASK.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Go to the project directory
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+cd REACT-CWV-TASK
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Install dependencies
+
+```bash
+npm install
+```
+
+Run development server
+
+```bash
+npm run dev
+```
+
+Open your browser
 
 ```
+http://localhost:5173
+```
+
+---
+
+# 🏗️ Production Build
+
+Build the application
+
+```bash
+npm run build
+```
+
+Preview production build
+
+```bash
+npm run preview
+```
+
+Open
+
+```
+http://localhost:4173
+```
+
+---
+
+# 📥 NPM Packages Used
+
+## Create Project
+
+```bash
+npm create vite@latest
+```
+
+---
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Install Web Vitals
+
+```bash
+npm install web-vitals
+```
+
+---
+
+## Install Performance Tools
+
+```bash
+npm install sharp-cli rollup-plugin-visualizer --save-dev
+```
+
+---
+
+# 🧪 Testing
+
+## Development Server
+
+```bash
+npm run dev
+```
+
+Verify:
+
+* Hero image loads correctly
+* 12 article cards are visible
+* Sidebar appears
+* Skeleton loader appears
+* Infinite scroll section appears
+* Advertisement banner appears
+
+---
+
+## Production Build
+
+```bash
+npm run build
+```
+
+Verify:
+
+* Build completes successfully
+* No build errors
+
+---
+
+## Production Preview
+
+```bash
+npm run preview
+```
+
+Open
+
+```
+http://localhost:4173
+```
+
+---
+
+## Lighthouse Testing
+
+1. Open Chrome
+2. Press **F12**
+3. Open **Lighthouse**
+4. Select
+
+* Desktop
+* Performance
+
+5. Click
+
+```
+Analyze page load
+```
+
+Expected Result
+
+```
+Performance Score = 100
+```
+
+---
+
+## Bundle Analysis
+
+After running
+
+```bash
+npm run build
+```
+
+A file named
+
+```
+bundle-stats.html
+```
+
+is generated.
+
+Open it in your browser to analyze the JavaScript bundle.
+
+---
+
+# 📂 Project Structure
+
+```
+REACT-CWV-TASK
+│
+├── public
+├── screenshots
+├── src
+│   ├── components
+│   ├── data
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── reportVitals.ts
+│
+├── bundle-stats.html
+├── README.md
+├── package.json
+├── vite.config.ts
+└── .gitignore
+```
+
+---
+
+# 👩‍💻 Author
+
+**Saiyasaswi**
+
+GitHub:
+https://github.com/saiyasaswi-685
+
+---
+
+# ⭐ Result
+
+✅ Lighthouse Performance Improved
+
+```
+8  →  100
+```
+
+Successfully optimized Core Web Vitals using modern frontend performance best practices.
+# 🚀 Frontend Performance Optimization (Core Web Vitals)
+
+## 📌 Project Overview
+
+This project demonstrates how to identify, analyze, and optimize **Core Web Vitals (CWV)** in a React + TypeScript + Vite application.
+
+The application was intentionally built with several performance issues such as:
+
+* Large unoptimized images
+* Layout shifts (CLS)
+* Blocking JavaScript execution
+* Poor loading strategy
+* Heavy bundle size
+
+These issues were identified using **Google Lighthouse** and then fixed using modern frontend optimization techniques.
+
+---
+
+# 🎯 Main Objective
+
+The primary goal of this project is to improve the Lighthouse Performance score by optimizing the application's loading performance and user experience.
+
+### Before Optimization
+
+* Performance Score: **8**
+
+### After Optimization
+
+* Performance Score: **100**
+
+---
+
+# 🛠️ Tech Stack
+
+* React
+* TypeScript
+* Vite
+* Web Vitals
+* Lighthouse
+* Rollup Plugin Visualizer
+* Sharp CLI
+* Lodash
+
+---
+
+# ✨ Optimizations Implemented
+
+## ✅ Hero Image Optimization
+
+* Converted PNG → WebP
+* Added preload
+* Added width & height
+* Used `fetchPriority="high"`
+* Enabled async image decoding
+
+---
+
+## ✅ Image Optimization
+
+* Added width and height attributes
+* Lazy loading for article thumbnails
+
+---
+
+## ✅ Layout Shift (CLS) Fix
+
+* Reserved advertisement banner space
+* Prevented layout movement during page load
+
+---
+
+## ✅ JavaScript Optimization
+
+* Removed heavy blocking task
+* Deferred analytics initialization
+* Reduced loading delay
+
+---
+
+## ✅ Font Optimization
+
+* Added Google Fonts preconnect
+* Used asynchronous font loading
+* Enabled `display=swap`
+
+---
+
+## ✅ Bundle Optimization
+
+* Installed Rollup Plugin Visualizer
+* Generated bundle analysis report
+
+---
+
+## 📊 Lighthouse Performance
+
+| Version             | Performance Score |
+| ------------------- | ----------------: |
+| Before Optimization |                 8 |
+| After Optimization  |               100 |
+
+---
+
+# 📷 Screenshots
+
+## 🔴 Before Optimization
+
+![Before Lighthouse](./screenshots/Screenshot%202026-06-24%20225728.png)
+
+---
+
+## 🟢 After Optimization
+
+![After Lighthouse](./screenshots/Screenshot%202026-06-25%20161857.png)
+
+---
+
+## 📈 Bundle Analysis Report
+
+![Bundle Visualizer](./screenshots/Screenshot%202026-06-24%20230111.png)
+
+---
+
+# 📦 Installation
+
+Clone the repository
+
+```bash
+git clone https://github.com/saiyasaswi-685/REACT-CWV-TASK.git
+```
+
+Go to the project directory
+
+```bash
+cd REACT-CWV-TASK
+```
+
+Install dependencies
+
+```bash
+npm install
+```
+
+Run development server
+
+```bash
+npm run dev
+```
+
+Open your browser
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🏗️ Production Build
+
+Build the application
+
+```bash
+npm run build
+```
+
+Preview production build
+
+```bash
+npm run preview
+```
+
+Open
+
+```
+http://localhost:4173
+```
+
+---
+
+# 📥 NPM Packages Used
+
+## Create Project
+
+```bash
+npm create vite@latest
+```
+
+---
+
+## Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Install Web Vitals
+
+```bash
+npm install web-vitals
+```
+
+---
+
+## Install Performance Tools
+
+```bash
+npm install sharp-cli rollup-plugin-visualizer --save-dev
+```
+
+---
+
+# 🧪 Testing
+
+## Development Server
+
+```bash
+npm run dev
+```
+
+Verify:
+
+* Hero image loads correctly
+* 12 article cards are visible
+* Sidebar appears
+* Skeleton loader appears
+* Infinite scroll section appears
+* Advertisement banner appears
+
+---
+
+## Production Build
+
+```bash
+npm run build
+```
+
+Verify:
+
+* Build completes successfully
+* No build errors
+
+---
+
+## Production Preview
+
+```bash
+npm run preview
+```
+
+Open
+
+```
+http://localhost:4173
+```
+
+---
+
+## Lighthouse Testing
+
+1. Open Chrome
+2. Press **F12**
+3. Open **Lighthouse**
+4. Select
+
+* Desktop
+* Performance
+
+5. Click
+
+```
+Analyze page load
+```
+
+Expected Result
+
+```
+Performance Score = 100
+```
+
+---
+
+## Bundle Analysis
+
+After running
+
+```bash
+npm run build
+```
+
+A file named
+
+```
+bundle-stats.html
+```
+
+is generated.
+
+Open it in your browser to analyze the JavaScript bundle.
+
+---
+
+# 📂 Project Structure
+
+```
+REACT-CWV-TASK
+│
+├── public
+├── screenshots
+├── src
+│   ├── components
+│   ├── data
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── reportVitals.ts
+│
+├── bundle-stats.html
+├── README.md
+├── package.json
+├── vite.config.ts
+└── .gitignore
+```
+
+---
+
+# 👩‍💻 Author
+
+**Saiyasaswi**
+
+GitHub:
+https://github.com/saiyasaswi-685
+
+---
+
+# ⭐ Result
+
+✅ Lighthouse Performance Improved
+
+```
+8  →  100
+```
+
+Successfully optimized Core Web Vitals using modern frontend performance best practices.
